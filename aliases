@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# System
+alias shutdown='sudo shutdown now'
+alias restart='sudo reboot'
+alias suspend='sudo pm-suspend'
+
+# SSH
+alias sshlt='ssh norbu@192.168.1.7'
+
+# xclip
+alias cv='xclip -sel clip'
+
+# netstat
+alias port='lsof -i | grep'
+
+# Folders
+alias ws="$HOME/workspace"
+alias df="$HOME/.config"
+
+# zsh
+alias d='dirs -v'
+for index in {1..9}; do alias "\$index"="cd +\${index}"; done; unset index
+
+# configs
+alias shconfig='nvim.appimage $ZDOTDIR/.zshrc'
+alias aliases='nvim.appimage $XDG_CONFIG_HOME/.aliases'
+alias omz='nvim.appimage $XDG_DATA_HOME/.oh-my-zsh'
+alias zenv='nvim.appimage ~/.zshenv'
+
+# dotfiles
+alias gconf='/usr/bin/git --git-dir="$HOME/.config" --work-tree="$HOME"'
+
+# mkdir
+mkcd() {
+    mkdir -p -- "$1" && cd -P -- "$1" || exit
+}
+
+# programs
+alias ls=lsd
+alias py=python3
+alias v=nvim.appimage
+alias pn=pnpm
+alias pni="pnpm install"
+alias pnr="pnpm run"
+alias pnx="pnpm exec"
+
+# fly.io
+alias flyp="flyctl postgres"
