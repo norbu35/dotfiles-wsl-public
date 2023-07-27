@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# System
+# system
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
 alias suspend='sudo pm-suspend'
@@ -14,7 +14,7 @@ alias cv='xclip -sel clip'
 # netstat
 alias port='lsof -i | grep'
 
-# Folders
+# folders
 alias ws="$HOME/workspace"
 alias df="$HOME/.config"
 
