@@ -26,19 +26,19 @@ source $ZSH/oh-my-zsh.sh
 ZSH_THEME='gruvbox'
 SOLARIZED_THEME='dark'
 
-# Completion
+# autocompletion
 source $ZDOTDIR/.completion.zsh
 _comp_options+=(globdots) # With hidden files
 COMPLETION_WAITING_DOTS=true
 
-# Options
+# options
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
 HIST_STAMPS='dd/mm-%HH:%MM'
 set -o noclobber
 
-# Plugins
+# plugins
 plugins=(
     docker
     git
@@ -49,14 +49,14 @@ plugins=(
     conda-zsh-completion
 )
 
-# keybindings
+# keymaps
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 zle -N autosuggest-accept
 bindkey '^Y' autosuggest-accept
 export FZF_DEFAULT_OPTS='--bind ctrl-y:accept'
 
-# Cursor mode
+# cursor mode
 cursor_mode() {
     # See https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html for cursor shapes
     cursor_block='\e[2 q'
@@ -84,12 +84,12 @@ cursor_mode() {
 
 cursor_mode
 
-# Edit commands in Vim
+# edit commands in Vim mode
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# Text objects
+# text objects
 autoload -Uz select-bracketed select-quoted
 zle -N select-quoted
 zle -N select-bracketed
@@ -103,7 +103,7 @@ for km in viopp visual; do
     done
 done
 
-# Surrounding
+# surrounding
 autoload -Uz surround
 zle -N delete-surround surround
 zle -N add-surround surround
